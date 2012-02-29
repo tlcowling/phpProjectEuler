@@ -32,6 +32,27 @@ class Problem3Test extends PHPUnit_Framework_TestCase
         $this->assertEquals("2",$problem8->calculate_highest_product_in
         ("111112"));
     }
+
+    public function testIfStringIsLessThan5LengthFunctionWillReturn0(){
+        $problem8 = new Problem8();
+        $this->assertEquals("0",$problem8->calculate_highest_product_in
+        ("432"));
+    }
+
+    public function testIfStringIsLessThan5LengthFunctionWillReturnWhateverHighestProductWas(){
+        $problem8 = new Problem8();
+        $problem8->largest_product_of_5_digits=10;
+
+        $this->assertEquals("10",$problem8->calculate_highest_product_in
+        ("324"));
+    }
+
+    public function testIf(){
+
+    }
+
+
+
 //
 //    public function testHighestSumOfFiveDigitsIn1234567(){
 //        $problem16 = new Problem16();
