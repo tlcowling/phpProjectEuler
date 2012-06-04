@@ -6,17 +6,18 @@ class Problem8{
     public $largest_product_of_5_digits = 0;
 
     public function calculate_highest_product_in($number_string){
-        if(strlen($number_string)<5) return $this->largest_product_of_5_digits;
-
         $product = $this->product_of_first_group_of_5($number_string);
-        if($product > $this->largest_product_of_5_digits){
-            $this->largest_product_of_5_digits = $product;
-        }
 
-         $number_string = substr($number_string,1);
+        if($product > $this->largest_product_of_5_digits)
+            $this->largest_product_of_5_digits = $product;
+
+        $number_string = substr($number_string,1);
+
+        if(strlen($number_string)<5) return $this->largest_product_of_5_digits;
 
         $this->calculate_highest_product_in($number_string);
 
+        return 2;
     }
 
     public function strproduct($string){
